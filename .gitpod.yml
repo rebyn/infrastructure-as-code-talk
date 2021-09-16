@@ -4,9 +4,7 @@ tasks:
     command: docker-compose up
   - name: tf-env
     init: |
-      brew update && brew upgrade && brew install \
-      gawk coreutils pre-commit tfenv terraform-docs \
-      tflint tfsec instrumenta/instrumenta/conftest \
+      brew install gawk coreutils pre-commit tfenv terraform-docs tflint tfsec instrumenta/instrumenta/conftest \
       && brew cleanup \
       && tfenv install 0.11.14
     command: tfenv use 0.11.14
@@ -21,4 +19,3 @@ vscode:
   extensions:
     - ms-azuretools.vscode-docker
     - HashiCorp.terraform
-    - AmazonWebServices.aws-toolkit-vscode  
