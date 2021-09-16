@@ -3,6 +3,13 @@ tasks:
       docker-compose pull
   - command: |
       docker-compose up
+  - tf-env: |
+      brew update && brew upgrade && brew install \
+      gawk coreutils pre-commit tfenv terraform-docs \
+      tflint tfsec instrumenta/instrumenta/conftest \
+      && brew cleanup
+  - tf-default: |
+      tfenv install 0.11.14 && tfenv use 0.11.14
 
 
 ports:
