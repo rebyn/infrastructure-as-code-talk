@@ -1,0 +1,18 @@
+tasks:
+  - init: |
+      docker-compose pull
+  - command: |
+      docker-compose up
+
+
+ports:
+  - port: 3000
+    onOpen: open-browser
+  - port: 4567
+    onOpen: open-preview
+
+vscode:
+  extensions:
+    - ms-azuretools.vscode-docker
+    - HashiCorp.terraform
+    - AmazonWebServices.aws-toolkit-vscode  
