@@ -2,12 +2,16 @@ tasks:
   - name: Docker-Compose
     init: docker-compose pull
     command: docker-compose up
-  - name: tf-env
+  - name: Terraform & AWS-CLI
     init: |
-      brew install gawk coreutils pre-commit tfenv terraform-docs tflint tfsec instrumenta/instrumenta/conftest \
+      brew install gawk coreutils pre-commit tfenv terraform-docs tflint tfsec instrumenta/instrumenta/conftest awscli \
       && brew cleanup \
       && tfenv install 0.11.14
     command: tfenv use 0.11.14
+  - name: Configure AWS-CLI
+    command: |
+      mkdir -p /home/gitpod/.aws \
+      && cp ./aws-cli.config /home/gitpod/.aws/config
 
 ports:
   - port: 3000
