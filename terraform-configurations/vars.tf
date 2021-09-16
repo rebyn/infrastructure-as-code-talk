@@ -13,7 +13,7 @@
 
 variable "region" {
   description = "The region where to deploy this code (e.g. us-east-1)."
-  default = "us-east-1"
+  default = "ap-southeast-1"
 }
 
 variable "key_pair_name" {
